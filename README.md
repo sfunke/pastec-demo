@@ -46,6 +46,19 @@ $   cd ./pics/train # go to train directory
 $   i=0; for f in *.jpg; do curl -X PUT --data-binary @$(pwd)/$f http://localhost:4212/index/images/$i; i=$((i+1)); done
 ```
 
+---
+
+### Load Index with Sampledata (in repo)
+To load the pretrained Index of the Sampledata folder, it can be loaded (in repository).
+After that, query Requests can be made.
+```bash
+$   curl -X POST -d '{"type":"LOAD", "index_path":"/pastec/data/sample_index.dat"}' http://localhost:4212/index/io
+
+{"type":"INDEX_LOADED"}
+```
+
+---
+
 ### Query for Image
 - via POST to `/index/searcher`, and image to query for as Binary Payload:
 - gives back the corresponding image-id
