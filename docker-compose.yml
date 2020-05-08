@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   pastec:
-    image: caspercdr/pastec:latest
+    image: sfunke/pastec:0.1
     container_name: pastec
     ports:
       - "4212:4212"
